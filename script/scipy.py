@@ -20,7 +20,9 @@ example_data
 
 ## RECODE DEATH WHERE 0 US ALIVE AND 1 IS DEAD ##
 example_data['death'] = example_data['death'].replace(0,'alive')
+example_data['death'] = example_data['death'].replace(1,'dead')
 example_data['death']
+example_data.head(50)
 #################################################
 
 
@@ -42,6 +44,7 @@ mytable = TableOne(example_data,
                    rename=example_data_labels, 
                    pval=False)
 mytable
+## mytable.rename(columns = {'0':'alive', '1':'dead'}, inplace = True) --> w/ pandas
 print(mytable.tabulate(tablefmt = "fancy_grid")) ## Fancy table
 #### Save table as excel
 mytable.to_excel('mytable.xlsx')
