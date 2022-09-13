@@ -1,1 +1,1 @@
-# Repo-1-SciPy
+# descriptives-scipy
